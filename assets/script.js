@@ -16,4 +16,59 @@
 // use header and footer bootstrap cards for calendar days?  https://getbootstrap.com/docs/4.3/components/card/#list-groups
 // use modal to enter inital event    https://getbootstrap.com/docs/4.3/components/modal/
 
-console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
+// use auditTask() function called timers.
+// setInterval() function to force refresh periodically
+
+
+function createTimeSlot(inputHour){
+    const row=document.createElement("div")
+    const hour=document.createElement("div")
+    const task=document.createElement("div")
+    const save=document.createElement("div")
+    const button=document.createElement("button")
+    const input=document.createElement("input")
+
+    row.classList.add("row")
+    row.id="row" + inputHour
+    hour.classList.add("col-sm")
+    task.classList.add("col-sm")
+    save.classList.add("col-sm")
+    button.classList.add("btn", "btn-primary")
+    button.type="button"
+    button.innerText="Save"
+    // ternary operator
+    input.placeholder=localStorage.getItem("task" + inputHour) === null? "Task": localStorage.getItem("task" + inputHour)
+    input.id="taskInput" + inputHour
+    input.type="text"
+    hour.innerText=inputHour + ":00"
+
+    $(button).on("click", function(){
+        localStorage.setItem("task" + inputHour, $("#taskInput" + inputHour).val())
+        $("#taskInput" + inputHour).attr("placeholder", $("#taskInput" + inputHour).val())
+    })
+
+    row.append(hour)
+    row.append(task)
+    row.append(save)
+    task.append(input)
+    save.append(button)
+
+    // compare inputHour with current hour
+
+    if (moment().isAfter(inputHour)) {
+        $(row).addClass("list-group-item-primary");
+    }
+    
+    return row
+}
+
+// page set to refresh
+$(document).ready(function(){
+    for (let i=0; i<9; i++){
+        $("#content").append (createTimeSlot(i+9))
+    }
+    setInterval(function(){
+        document.getElementById ("currentDay").innerText=moment().format('MMMM Do YYYY');
+    }, 0)
+})
+
