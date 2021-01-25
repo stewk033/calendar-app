@@ -5,30 +5,31 @@ This assignment required the creationg of a simple calendar application that all
 
 ## User Story
 
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
+* _AS AN employee with a busy schedule_
+* _I WANT to add important events to a daily planner_
+* _SO THAT I can manage my time effectively_
 
 ## Acceptance Criteria
 
-GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
-WHEN I scroll down
-THEN I am presented with time blocks for standard business hours
-WHEN I view the time blocks for that day
-THEN each time block is color-coded to indicate whether it is in the past, present, or future
-WHEN I click into a time block
-THEN I can enter an event
-WHEN I click the save button for that time block
-THEN the text for that event is saved in local storage
-WHEN I refresh the page
-THEN the saved events persist
+* _GIVEN I am using a daily planner to create a schedule_
+* _WHEN I open the planner_
+* _THEN the current day is displayed at the top of the calendar_
+* _WHEN I scroll down_
+* _THEN I am presented with time blocks for standard business hours_
+* _WHEN I view the time blocks for that day_
+* _THEN each time block is color-coded to indicate whether it is in the past, present, or future_
+* _WHEN I click into a time block_
+* _THEN I can enter an event_
+* _WHEN I click the save button for that time block_
+* _THEN the text for that event is saved in local storage_
+* _WHEN I refresh the page_
+* _THEN the saved events persist_
 
 ## My Solution
 
-Live URL: (https://stewk033.github.io/Personal-Portfolio/)
+Live URL: (https://stewk033.github.io/calendar-app/)
 
 Refactored Code:
-* [HTML] (https://github.com/stewk033/Personal-Portfolio/blob/main/index.html)
-* [CSS] (https://github.com/stewk033/Personal-Portfolio/blob/main/assets/css/style.css)
+* [HTML] (https://github.com/stewk033/calendar-app/blob/main/index.html)
+* [CSS] (https://github.com/stewk033/calendar-app/blob/main/assets/style.css)
+* [JS] (https://github.com/stewk033/calendar-app/blob/main/assets/script.js)
