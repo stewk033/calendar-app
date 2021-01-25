@@ -19,7 +19,7 @@
 // use auditTask() function called timers.
 // setInterval() function to force refresh periodically
 
-
+// function to generate time slots
 function createTimeSlot(inputHour){
     const row=document.createElement("div")
     const hour=document.createElement("div")
@@ -36,7 +36,6 @@ function createTimeSlot(inputHour){
     button.classList.add("btn", "btn-primary")
     button.type="button"
     button.innerText="Save"
-    // ternary operator
     input.placeholder=localStorage.getItem("task" + inputHour) === null? "Task": localStorage.getItem("task" + inputHour)
     input.id="taskInput" + inputHour
     input.type="text"
@@ -53,9 +52,8 @@ function createTimeSlot(inputHour){
     task.append(input)
     save.append(button)
 
-    // compare inputHour with current hour
-
-    if (moment().isAfter(inputHour)) {
+    // change color of row depending on time of day
+    if (moment().isAfter(inputHour)){
         $(row).addClass("list-group-item-primary");
     }
     
@@ -67,6 +65,7 @@ $(document).ready(function(){
     for (let i=0; i<9; i++){
         $("#content").append (createTimeSlot(i+9))
     }
+    // display current date
     setInterval(function(){
         document.getElementById ("currentDay").innerText=moment().format('MMMM Do YYYY');
     }, 0)
